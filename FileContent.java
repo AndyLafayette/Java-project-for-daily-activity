@@ -23,21 +23,23 @@ class FileContent
       ArrayList<ArrayList<String>> tsl = new ArrayList<ArrayList<String>>();
       ArrayList<String> temp = new ArrayList<String>();
       //set the initial content of object Task
-      while( (line = br.readLine()) != null && !line.trim().isEmpty() )
-      {
-        temp = new ArrayList<String>();
-        temp.add(line.replace("\\n","\n"));
-        temp.add(line = br.readLine());
-        temp.add(line = br.readLine());
-        temp.add(line = br.readLine());
-        line = br.readLine();
-        tsl.add(temp);
+      if ( !( file.exists() && (file.length() == 0) ) )
+	    {
+		  while( (line = br.readLine()) != null && !line.trim().isEmpty() )
+        {
+          temp = new ArrayList<String>();
+          temp.add(line.replace("\\n","\n"));
+          temp.add(line = br.readLine());
+          temp.add(line = br.readLine());
+          temp.add(line = br.readLine());
+          line = br.readLine();
+          tsl.add(temp);
+        }
+        t.setTaskList(tsl);
+        t.setTask(temp.get(0));
+        t.setBeginTime(temp.get(1));
+        t.setEndTime(temp.get(2));
       }
-      t.setTaskList(tsl);
-      t.setTask(temp.get(0));
-      t.setBeginTime(temp.get(1));
-      t.setEndTime(temp.get(2));
-      
     }
     catch(IOException exc)
     {
