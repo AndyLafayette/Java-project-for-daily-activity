@@ -24,8 +24,8 @@ class FileContent
       ArrayList<String> temp = new ArrayList<String>();
       //set the initial content of object Task
       if ( !( file.exists() && (file.length() == 0) ) )
-	    {
-		  while( (line = br.readLine()) != null && !line.trim().isEmpty() )
+      {
+        while( (line = br.readLine()) != null && !line.trim().isEmpty() )
         {
           temp = new ArrayList<String>();
           temp.add(line.replace("\\n","\n"));
