@@ -1,5 +1,4 @@
-// 6515765 zy15765 Rui Jin
-package unnc.cs.zy15765;
+package unnc.cs.zy;
 import java.io.*;
 import java.util.*;
 import java.text.*;
